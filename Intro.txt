@@ -1,0 +1,36 @@
+An item has been swept up on the beach *insert Beach name*. You bend down to pick it up.
+Walk to the village and show the villager the item.
+Whoever found this item is destined to save the village. 
+Please tell me your name chosen one
+Villager takes you to the villager head.
+
+Our village is facing its greatest crisis. The trees are dying. The fishes in the sea are dying.
+Low on food. People are getting sick.
+The only one who couls save our village is you.
+You have to build a boat to get to Island *insert Name*
+you will need these to collect *insert#of logs* log, *#of vines* vines,fabric to build a boat
+You are provided with a backpack
+
+//Find the hatchet
+You have tripped over an item
+Add it to inventory
+
+You are in the forest
+
+//Get Vines/Rope
+
+//Get Wood
+Cut down this tree
+This is a healthy tree. You recieved *5-10* logs and *#of fruit* fruit.
+This is a dead tree. You have recieved *#of logs* logs.
+*- points from health*
+
+//Threat in forest
+You have come across a wild animal
+Do you want runaway or fight it?
+//If you fight animal
+*health affected*
+*- points from health*
+You have recieved a leather after defeating the animal
+
+//Get leather from some other character
