@@ -34,3 +34,6 @@ Do you want runaway or fight it?
 You have recieved a leather after defeating the animal
 
 //Get leather from some other character
+
+//Ending
+The village heart has been returned. The village is saved. YAYYYY.
