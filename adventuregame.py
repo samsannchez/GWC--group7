@@ -10,6 +10,9 @@ def typing(sentence):
         print(x, end='')
         sys.stdout.flush()
         sleep(0.05)
+        if(x == "\n"):
+            wait = input()
+    
 
 def dashboard(health): 
     #If using Windows os.system('cls')
@@ -36,8 +39,8 @@ dashboard_intro(location)
 typing("Tiki: Chief Koa! ")
 typing(name)
 typing(" has found the lost amulet.\n")
-typing("Chief Koa: Thank heavens.\nOur village is facing its greatest crisis. \nThe trees are bare. \nThe fish in the sea are washing up on the shore. \nOur supplies are running out. \nOur people have lost their health.")
-typing("The only one who can save our village is you.\nYou have to build a boat to get to the Island.\nYou will need these to collect *insert#of logs* log, *#of vines* vines,fabric to build a boat.\n")
+typing("Chief Koa: Thank heavens.\nOur village is facing its greatest crisis. \nThe trees are bare. \nThe fish in the sea are washing up on the shore. \nOur supplies are running out. \nOur people have lost their health.\n")
+typing("You are the only one who can save our village.\nYou have to build a boat to get to the Island.\nYou will need these to collect *insert#of logs* log, *#of vines* vines,fabric to build a boat.\n")
 typing("Take this backpack on your quest to store the items you collect along the way.")
 
 #Finish conversation with the chief and start the quest
