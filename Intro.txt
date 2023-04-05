@@ -17,10 +17,10 @@ Add it to inventory
 
 Scene 3: Player meets a new character that will lead him into the forest.
 The ranger: 
-I'm the forest ranger, myfamily has looked after the forest for many generation. 
-There are still many unkown mysteries of the forest yet to be discovered. 
-For your quest you will need the stronegst wood to cross the sea.
-Beware the strongest wood lies deep withitn the forest, where unknown creatures lurk. 
+I'm the forest ranger, my family has looked after the forest for many generation. 
+There are still many unknown mysteries of the forest yet to be discovered. 
+For your quest you will need the strongest wood to cross the sea.
+Beware the strongest wood lies deep within the forest, where unknown creatures lurk. 
 Many strong people have ventured into the deep forest and have not returned. 
 The Chief said only you can save our our village. 
 I wish you a safe journey *insert name*.
@@ -33,9 +33,9 @@ Collecting wood
 
 Cut down this tree : 
 *-1hp points from health*
-This is a healthy tree. You recieved *5-10* logs and *#of fruit* fruit.
+This is a healthy tree. You received *5-10* logs and *#of fruit* fruit.
 Fruit: +3 hp
-This is a dead tree. You have recieved *#of logs* logs.
+This is a dead tree. You have received *#of logs* logs.
 
 //Threat in forest
 You have come across a wild animal
