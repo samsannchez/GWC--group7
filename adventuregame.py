@@ -112,6 +112,26 @@ def scene1():
     typing("You are the only one who can save our village.\nYou will have to venture into the dark forest.\n")
     typing("Take this backpack on your quest to store the items you collect along the way.\n")
     backpack=input("Type 'x' to take the backpack.")
+     
+#Scene 3 :Player meets a new character that will lead him into the forest
+# The ranger informs you about the forest
+#location forest unlocked
+#The ranger:
+
+def Ranger():
+    typing("I'm the forest ranger, my family has looked after the forest for many generation./n")
+    typing("There are still many unknown mysteries of the forest yet to be discovered./n")
+    typing("For your quest you will need the strongest wood to cross the sea./n")
+    typing("Beware the strongest wood lies deep within the forest, where unknown creatures lurk./n")
+    typing("Many strong people have ventured into the deep forest and have not returned./n")
+    typing("The Chief said only you can save our our village. \nI wish you a safe journey ")
+    typing(name)
+    typing("!/n")
+    typing("Enter 2 to continue into the forest")
+
+    if (userinput =="2"):
+        current_location(,x,,,2)
+
 
 def scene2():
     location = "Dark Forest"
