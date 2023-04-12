@@ -1,14 +1,33 @@
+import time
 from time import sleep
 import os
 import sys
 wood = 0
 diamond =0
 health = 100
+l1='x'
+l2=' '
+l3=' '
+l4=' '
+stage=1
 
 def forest_menu():
      print("1. Cut down a Tree\n")
      print("2. Build a Trap\n")
-     
+
+def current_location(l1,l2,l3,l4,stage):
+    if(stage==1):
+        print("["+l1+"]")
+        print("Beach\n")
+    if(stage==2):
+        print("["+l1+"]\t["+l2+"]")
+        print("Beach\tForest\n")
+    if(stage==3):
+        print("["+l1+"]\t["+l2+"]\t["+l3+"]")
+        print("Beach\tForest\tSea\n")
+    if(stage==4):
+        print("["+l1+"]\t["+l2+"]\t["+l3+"]\t["+l4+"]")
+        print("Beach\tForest\tSea\tIsland\n")
 
 def typing(sentence):
     for x in sentence:
@@ -20,15 +39,25 @@ def typing(sentence):
             wait = input()
     
 
-def dashboard(health): 
+def dashboard(health, location): 
     #If using Windows os.system('cls')
     os.system('clear') 
+    if(location == "Coral Cove Beach"):
+        print("[x]")
+        print("Beach\n")
+
+
+
+    print("Location: ", location)
     print("Health Level: ", health)
+
 
 def dashboard_intro(location): 
     #If using Windows os.system('cls')
     os.system('clear') 
-    print("Location: ", location)
+    if(location == "Coral Cove Beach"):
+        print("[x]")
+        print("Beach\n")
     
 def animation():
     animation = [
@@ -58,31 +87,39 @@ def animation():
 
 # maybe include a command sheet that the player has access to at all times
 # that includes the keys they need to press to navigate through the game
+def scene1():
+    location = "Coral Cove Beach" 
+    dashboard_intro(location)
+    typing("An amulet has been swept up on the beach by the village.\nYou bend down to pick it up.\n")
+    typing("Tiki, the local surfer, glances over at your direction.\nHe eyes the object in your hand.\n")
+    typing("Tiki: Oi Mate! I haven't seen you around here before, what's your name?\n")
+    name = input("Type your name:")
+    os.system('clear') 
+    typing("Tiki: Welcome to Coral Cove ")
+    typing(name)
+    typing("!\n")
+    typing("I saw you found something by the shore.\nLet me take a closer look...\nI can't be belive my eyes, this amulet has been lost for years.\nWe need to tell the Chief!\n")
+    location = "Village"
+    os.system('clear') 
+    typing("Tiki takes you to the village...\n")
+    animation()
+    dashboard_intro(location)
+    typing("Tiki: Chief Koa! ")
+    typing(name)
+    typing(" has found the lost amulet.\n")
+    typing("Chief Koa: Thank heavens.\n")
+    typing("Our village is facing its greatest crisis. \nThe trees are bare. \nThe fish in the sea are washing up on the shore. \nOur supplies are running out. \nOur people have lost their health.\n")
+    typing("You are the only one who can save our village.\nYou will have to venture into the dark forest.\n")
+    typing("Take this backpack on your quest to store the items you collect along the way.\n")
+    backpack=input("Type 'x' to take the backpack.")
 
-location = "Coral Cove Beach" 
-dashboard_intro(location)
-typing("An amulet has been swept up on the beach by the village.\nYou bend down to pick it up.\n")
-typing("Tiki, the local surfer, glances over at your direction.\nHe eyes the object in your hand.\n")
-typing("Tiki: Oi Mate! I haven't seen you around here before, what's your name?\n")
-name = input("Type your name:")
-os.system('clear') 
-typing("Tiki: Welcome to Coral Cove ")
-typing(name)
-typing("!\n")
-typing("I saw you found something by the shore.\nLet me take a closer look...\nI can't be belive my eyes, this amulet has been lost for years.\nWe need to tell the Chief!\n")
-location = "Village"
-os.system('clear') 
-typing("Tiki takes you to the village...\n")
-animation()
-dashboard_intro(location)
-typing("Tiki: Chief Koa! ")
-typing(name)
-typing(" has found the lost amulet.\n")
-typing("Chief Koa: Thank heavens.\n")
-typing("Our village is facing its greatest crisis. \nThe trees are bare. \nThe fish in the sea are washing up on the shore. \nOur supplies are running out. \nOur people have lost their health.\n")
-typing("You are the only one who can save our village.\nYou have to build a boat to get to the Island.\nYou will need these to collect *insert#of logs* log, *#of vines* vines,fabric to build a boat.\n")
-typing("Take this backpack on your quest to store the items you collect along the way.\n")
-input("Type 'x' to take the backpack.")
+def scene2():
+    location = "Dark Forest"
+    os.system('clear') 
+    typing("Walking to the dark forest...\n")
+    animation()
+    dashboard(location, health)
+    forest_menu()
 
 
 #Finish conversation with the chief and start the quest
@@ -133,10 +170,6 @@ def meetCaptainJack():
         if userInput == "ignore jack":
             ignoreJack()
 
-meetCaptainJack()
-
-# Scene 6: Player encounters bad guys (threats) and fights them for fabric.
-
-
-
+################GAME START#############
+os.system('clear') 
 
