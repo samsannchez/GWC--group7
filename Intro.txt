@@ -49,3 +49,28 @@ You have recieved a leather after defeating the animal
 
 //Ending
 The village heart has been returned. The village is saved. YAYYYY.
+
+
+
+
+
+
+
+##
+#Create a map for each location.
+
+
+#Forest 
+#T- trees 
+#Fight threat and collect fur
+#Trade fur for fabric 
+#Trade wood for rope
+
+
+
+
+
+
+
+
+
