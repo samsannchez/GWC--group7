@@ -1,7 +1,7 @@
-import time
-from time import sleep
 import os
 import sys
+from scenes import scene1, Ranger, talkToJack, ignoreJack, meetCaptainJack
+from maze import TinyMazeEnv
 wood = 0
 diamond =0
 health = 100
@@ -10,10 +10,6 @@ l2=' '
 l3=' '
 l4=' '
 stage=1
-
-def forest_menu():
-     print("1. Cut down a Tree\n")
-     print("2. Build a Trap\n")
 
 def current_location(l1,l2,l3,l4,stage):
     if(stage==1):
@@ -190,6 +186,14 @@ def meet_captain_jack():
         if userInput == "ignore jack":
             ignore_jack()
 
-################GAME START#############
-os.system('clear') 
 
+######################################
+#             GAME START             #
+######################################
+
+os.system('clear') 
+scene1()
+Ranger()
+os.system('clear') 
+maze = TinyMazeEnv()
+maze.play()
