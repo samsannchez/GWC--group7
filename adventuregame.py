@@ -129,8 +129,8 @@ def Ranger():
     typing("!/n")
     typing("Enter 2 to continue into the forest")
 
-    if (userinput =="2"):
-        current_location(,x,,,2)
+    # if (userinput =="2"):
+    #     current_location(,x,,,2)
 
 
 def scene2():
@@ -153,14 +153,14 @@ def scene2():
 
 def forest():
     if userInput == "":
-        meetCaptainJack()
+        meet_captain_jack()
 
 # def trade():
 
 
-def talkToJack():
+def talk_to_jack():
     options = ["offer a trade", "walk away"]
-    typing("Hey there! I'm Captain Jack. I was a pirate until my ship got attacked. My good 'ol leg also went down with the ship.")
+    typing("Captain Jack: Hey there! I was a pirate until my ship got attacked. My good 'ol leg also went down with the ship.")
     typing("\nNow I run a bar West of the Village. Come 'n stop by anytime!")
     userInput = "";
     # while userInput not in options:
@@ -173,11 +173,11 @@ def talkToJack():
         # if userInput == "walk away"
         #     forest()
 
-def meetCaptainJack():
+def meet_captain_jack():
     location = "forest"
     options = ["talk to jack", "ignore jack"]
-    typing("\nYou hear footsteps behind you.\n")
-    typing("You turn around and see Captain Jack, a retired pirate who now runs a bar on the beach.\n")
+    typing("You hear footsteps behind you.")
+    typing("\nYou turn around and see Captain Jack, a retired pirate who now runs a bar on the beach.\n")
     typing("He has an eyepatch and a missing leg. ")
     typing("\nWhat would you like to do?")
     userInput = ""
@@ -185,10 +185,10 @@ def meetCaptainJack():
         print("\nOptions: talk to jack/ignore jack")
         userInput = input()
         if userInput == "talk to jack":
-            talkToJack()
+            talk_to_jack()
 
         if userInput == "ignore jack":
-            ignoreJack()
+            ignore_jack()
 
 ################GAME START#############
 os.system('clear') 
