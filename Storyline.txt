@@ -1,0 +1,29 @@
+In a small village nestled in between the ocean and dense forest, the people were facing a great danger. 
+A dark force had descended upon the land, bringing with it destruction and chaos. 
+The villagers were afraid, and many had fled their homes in search of safety. 
+
+As the days passed, the situation grew worse. The forest was dying, the crops were withering, and the animals were disappearing. 
+The once-beautiful flowers wilted, the once-clear waters grew murky, and the once-gentle breeze grew harsh and cold. 
+The villagers were desperate for a hero to save them from the darkness, but no one had come forward. 
+
+One day, the ancient amulet hat had been passed down through generations in the village began to crack. 
+The villagers were scared by its sudden change, as the amulet was said to be the source of the village's prosperity and well-being. 
+It was said that the amulet had the power to restore the Village, but only if it was wielded by a chosen one. 
+
+You see an old, cracked amulet and it draws you near. 
+You touch the amulet, and it begins to emit a soft glow. 
+
+Tiki speaking to chief:
+The amulet glowed with a soft, golden light when *name* touched it. 
+Chief Koa:
+The amulet had found its chosen one. 
+The island is the heart of the darkness. There you will face the source of the evil that has been threatening our village.  
+
+Island character:
+Mana: She is the care taker the person/island who lost the heart
+Tells the rest of the story
+The amulet was the heart of the ... 
+Many years have passed since the heart was stolen( or borrowed but not returned)
+The heart began to stop beating and cracking (losing its life force) as it had been so far away from its body.
+Finally .... is at peace.
+Thank you!!
