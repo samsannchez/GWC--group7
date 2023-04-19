@@ -3,8 +3,8 @@ import os
 import random
 import time
 from time import sleep
-import os
-import sys
+from functions import typing
+from scenes import meetcharacter
 
 class TinyMazeEnv():
 
@@ -122,12 +122,7 @@ class TinyMazeEnv():
 					# press any key to continue?
 					wait = input()
 			
-		def meetcharacter():
-			os.system('clear') 
-			typing("This is a conversation with a character.\n")
 
-		def collectwood():
-			print(offset + "+5 Wood")
 
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
@@ -159,7 +154,7 @@ class TinyMazeEnv():
 
 		#Check for tree
 		if self.maze[self.y][self.x] == 2:
-			collectwood()
+			status = self.tree
 			self.maze[self.y][self.x] = 10
 
 		return status
@@ -173,6 +168,11 @@ class TinyMazeEnv():
 			else:
 				move = input()
 			status = self.step(move)
+
+			if status == self.tree:
+				sleep(0.5)
+				typing("You found wood!    ")
+				sleep(0.5)
 
 			if status == self.quit: 
 				print("You quit.")
