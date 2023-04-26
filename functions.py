@@ -9,6 +9,9 @@ import sys
 #           MAIN FUNCTIONS           #
 ######################################
 
+def display_health(health):
+    print("Health: "+str(health))
+
 def current_location(l1,l2,l3,l4,stage):
     if(stage==1):
         print("["+l1+"]")
