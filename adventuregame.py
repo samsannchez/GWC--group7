@@ -15,9 +15,9 @@ stage=1
 ######################################
 #             GAME START             #
 ######################################
-os.system('clear') 
-scene1()
-Ranger()
-os.system('clear') 
+# os.system('clear') 
+# scene1()
+# Ranger()
+# os.system('clear') 
 game=maze.TinyMazeEnv()
 game.play()

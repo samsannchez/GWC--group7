@@ -148,6 +148,7 @@ class TinyMazeEnv():
 				break
 			elif status == self.tree:
 				print("You found wood")
+				inventory.add_item("wood", 5)
 			else: 
 				self.display_maze(move)
 
