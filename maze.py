@@ -3,17 +3,20 @@ import os
 import random
 import time
 from time import sleep
-from functions import typing
-from scenes import meetcharacter
+import os
+import sys
+import scenes
+import functions
+import inventory
 
 class TinyMazeEnv():
 
 	# define status codes
 	stepped = 1
 	blocked = 2
-	won = 3
-	quit = 4
-	tree = 9
+	tree = 3
+	won = 4
+	quit = 5
 	# define mazes
 	mazes =	{ 
 			  13: [ [ 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4],
@@ -28,43 +31,8 @@ class TinyMazeEnv():
 			  		[ 0, 2, 0, 0, 1, 1, 3, 0, 0, 0, 1, 1, 1],
 			  		[ 1, 0, 0, 0, 1, 1, 0, 0, 3, 0, 1, 0, 1],
 			  		[ 1, 0, 1, 0, 0, 0, 2, 1, 1, 0, 1, 0, 1],
-			  		[ 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0] ],
-
-			  11: [	[ 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0],
-			 		[ 0, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1],
-			 		[ 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0],
-			 		[ 1, 1, 0, 1, 0, 1, 0, 1, 0, 0, 1],
-			 		[ 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1],
-			 		[ 0, 0, 1, 0, 0, 0, 1, 0, 1, 1, 0],
-			 		[ 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0],
-			 		[ 1, 1, 0, 0, 0, 0, 1, 1, 0, 1, 0],
-			 		[ 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1],
-			 		[ 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0],
-			 		[ 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0] ],
-
-		      9:  [	[ 0, 0, 1, 0, 0, 0, 0, 1, 1],
-			 		[ 1, 0, 0, 0, 1, 1, 0, 0, 1],
-			 		[ 0, 0, 1, 0, 0, 0, 0, 0, 1],
-			 		[ 1, 0, 1, 0, 1, 0, 1, 0, 0],
-			 		[ 0, 0, 0, 1, 1, 0, 0, 0, 1],
-			 		[ 0, 1, 0, 0, 0, 1, 0, 1, 1],
-			 		[ 0, 0, 0, 1, 0, 0, 0, 0, 1],
-			 		[ 1, 0, 0, 0, 0, 1, 1, 0, 1],
-			 		[ 0, 0, 1, 1, 0, 0, 0, 0, 0] ],	
-
-			  7:  [ [ 0, 0, 1, 0, 0, 0, 0],
-			 		[ 1, 0, 0, 0, 1, 1, 0],
-			 		[ 0, 0, 1, 0, 0, 0, 0],
-			 		[ 1, 0, 1, 0, 1, 0, 1],
-			 		[ 0, 0, 0, 1, 1, 0, 0],
-			 		[ 0, 1, 0, 0, 0, 1, 0],
-			 		[ 0, 0, 0, 1, 0, 0, 0] ],
-
-			  5:  [	[ 0, 2, 1, 0, 1],
-					[ 1, 0, 1, 0, 0],
-					[ 0, 0, 2, 0, 1],
-					[ 0, 1, 1, 0, 1],
-					[ 0, 2, 1, 0, 0] ]
+			  		[ 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0] ]
+	
 			}
 
 	
@@ -83,11 +51,11 @@ class TinyMazeEnv():
 		character1=0
 		# display the maze in its current state
 		os.system('clear')  	# clear screen
+		functions.current_location("","x","","",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
-		print(offset + "        w: up")
-		print(offset + "   a: left d: right")
-		print(offset + "       s: down")
-		print("")
+		print("       w: up s: down a: left d: right\n")
+		print(offset + "     b: backpack")
+
 		#print("---" * (self.maze_size + 2))
 		for i in range(self.maze_size):
 			row = "   "
@@ -121,8 +89,12 @@ class TinyMazeEnv():
 				if(x == "\n"):
 					# press any key to continue?
 					wait = input()
-			
 
+			
+		def meetcharacter():
+			os.system('clear') 
+			# typing("This is a conversation with a character.\n")
+			scenes.meetCaptainJack()
 
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
@@ -144,17 +116,19 @@ class TinyMazeEnv():
 			if (self.y < self.maze_size-1) and (self.maze[self.y+1][self.x] != 1) and (self.maze[self.y+1][self.x] != 4): 
 				self.y += 1
 				status = self.stepped
+		elif move == "b":
+			inventory.display_inventory()
+			self.maze[self.y][self.x] = 10
 		elif move == "Q":
 			status = self.quit
 
 		#Check for a character 
 		if self.maze[self.y][self.x] == 3:
 			meetcharacter()
-			self.maze[self.y][self.x] = 10
 
 		#Check for tree
 		if self.maze[self.y][self.x] == 2:
-			status = self.tree
+			status=self.tree
 			self.maze[self.y][self.x] = 10
 
 		return status
@@ -169,22 +143,11 @@ class TinyMazeEnv():
 				move = input()
 			status = self.step(move)
 
-			if status == self.tree:
-				sleep(0.5)
-				typing("You found wood!    ")
-				sleep(0.5)
-
 			if status == self.quit: 
 				print("You quit.")
 				break
+			elif status == self.tree:
+				print("You found wood")
 			else: 
 				self.display_maze(move)
 
-
-# main
-if __name__ == "__main__":
-	if len(sys.argv) > 1:
-		maze = TinyMazeEnv(int(sys.argv[1]))
-	else:
-		maze = TinyMazeEnv()
-	maze.play()
