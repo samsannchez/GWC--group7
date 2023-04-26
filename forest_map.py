@@ -5,7 +5,7 @@ import time
 from time import sleep
 import os
 import sys
-import adventuregame
+import scenes
 
 class TinyMazeEnv():
 
@@ -134,7 +134,7 @@ class TinyMazeEnv():
 		def meetcharacter():
 			os.system('clear') 
 			# typing("This is a conversation with a character.\n")
-			adventuregame.meet_captain_jack()
+			scenes.meet_captain_jack()
 
 		def collectwood():
 			print(offset + "+5 Wood")
@@ -167,7 +167,6 @@ class TinyMazeEnv():
 
 		#Check for a character 
 		if self.maze[self.y][self.x] == 3:
-			meetcharacter()
 			self.maze[self.y][self.x] = 10
 
 		#Check for tree
