@@ -1,7 +1,7 @@
 # GWC-group7
-![Open Source Society University (OSSU)](https://i.imgur.com/kYYCXtC.png)
+![Girls Who Code UCF](https://cdn.discordapp.com/attachments/1004154088671424612/1005663826231967784/03195FB5-6FD3-4672-AB83-FAEBAC6E17B2.png)
 
-<h3 align="center">Group 7</h3>
+<h3 align="center">Girls Who Code UCF</h3>
 <p align="center">
   Text Adventure
 </p>
