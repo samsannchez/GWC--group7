@@ -1,9 +1,9 @@
 # GWC-group7
 ![Girls Who Code UCF](https://cdn.discordapp.com/attachments/1010039856413552732/1102673193417846795/Pink_Pastel_Gradient_Twitter_Header.png))
 
-<h3 align="center">Girls Who Code UCF</h3>
+<h3 align="center">Text Adventure</h3>
 <p align="center">
-  Text Adventure
+  Girls Who Code UCF
 </p>
 
 # Contents
@@ -28,7 +28,7 @@ but specifically chosen to meet the following criteria.
 
 # How to play
 
-#Functions
+# Functions
 
 # Summary
 
@@ -43,4 +43,4 @@ but specifically chosen to meet the following criteria.
 </p>
 * **[Glory](https://github.com/ericdouglas)**: game developer
 * **[Sophia](https://github.com/joshmhanson)**: game developer
-* **[Sam Sanchez](https://github.com/waciumawanjohi)**: group mentor
+* **[Sam Sanchez](https://github.com/samsannchez)**: group mentor
