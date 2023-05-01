@@ -1,5 +1,5 @@
 # GWC-group7
-![Girls Who Code UCF](https://cdn.discordapp.com/attachments/1004154088671424612/1005663826231967784/03195FB5-6FD3-4672-AB83-FAEBAC6E17B2.png)
+![Girls Who Code UCF]([https://cdn.discordapp.com/attachments/1004154088671424612/1005663826231967784/03195FB5-6FD3-4672-AB83-FAEBAC6E17B2.png](https://cdn.discordapp.com/attachments/1010039856413552732/1102673193417846795/Pink_Pastel_Gradient_Twitter_Header.png))
 
 <h3 align="center">Girls Who Code UCF</h3>
 <p align="center">
