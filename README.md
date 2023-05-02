@@ -8,7 +8,8 @@
 
 - [Summary](#summary)
 - [GamePlay](#gameplay)
-- [Functions](#functions)
+- [Game Functions](#gamefunctions)
+- [Languages and Tools](#languagesandtools)
 - [Team](#team)
 
 # Summary
@@ -30,7 +31,7 @@ but specifically chosen to meet the following criteria.
 
 # Game Functions
 
-# Languages and Tools:
+# Languages and Tools
 <img align="left" alt="Python" width="54px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
 <img align="left" alt="Vscode" width="56px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />  
 <img align="left" alt="Git" width="56px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-plain.svg" />
