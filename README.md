@@ -9,7 +9,6 @@
 
 - [Summary](##summary)
 - [How to Play](##how-to-play)
-- [Game Functions](##game-functions)
 - [Languages and Tools](##languages-and-tools)
 - [Team](#team)
 
@@ -30,7 +29,6 @@ O - ocean </br>
 I - island </br>
 #### Other commands
 b - backpack
-## Game Functions
 
 ## Languages and Tools
 
