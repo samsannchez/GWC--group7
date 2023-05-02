@@ -18,7 +18,16 @@
 ## How to play
 
 ### Control Keys
-
+#### Moving in the map
+w - up
+s - down
+a - left
+d - right
+#### Switching Locations
+F - forest
+B - Beach
+O - ocean
+I - island
 ## Game Functions
 
 ## Languages and Tools
