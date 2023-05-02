@@ -13,11 +13,13 @@
 - [Team](#team)
 
 ## Summary
-###Locations
-####Beach
-####Forest
-####Ocean
-####Island
+
+### Locations
+
+#### Beach
+#### Forest
+#### Ocean
+#### Island
 
 ## How to play
 
