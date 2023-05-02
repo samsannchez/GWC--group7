@@ -18,8 +18,8 @@
 
 * #### Beach
 * #### Forest
-#### Ocean
-#### Island
+* #### Ocean
+* #### Island
 
 ## How to play
 
