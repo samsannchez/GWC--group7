@@ -1,10 +1,10 @@
 # GWC-group7
 ![Girls Who Code UCF](https://cdn.discordapp.com/attachments/1010039856413552732/1102673193417846795/Pink_Pastel_Gradient_Twitter_Header.png))
 
-<h3 align="center">Text Adventure</h3>
-<p align="center">
+<h1 align="center">Text Adventure</h1>
+<h3 align="center">
   Girls Who Code UCF
-</p>
+</h3>
 
 # Contents
 
