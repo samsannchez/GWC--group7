@@ -25,7 +25,7 @@ a - left </br>
 d - right </br>
 #### Switching Locations
 F - forest </br>
-B - Beach </br>
+B - beach </br>
 O - ocean </br>
 I - island </br>
 #### Other commands
