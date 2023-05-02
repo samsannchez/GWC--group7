@@ -38,15 +38,6 @@ but specifically chosen to meet the following criteria.
 
 
 # Team
-<p align="center">
-  <a href="https://github.com/sindresorhus/awesome">
-    <img alt="Sophia" src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg">
-  </a>
-  <a href="https://github.com/ossu/computer-science">
-	<img alt="Glory" src="https://img.shields.io/badge/OSSU-computer--science-blue.svg">
-  </a>
-</p>
-
 
 * **[Glory](https://github.com/Glory-SM)**: Game Developer
 * **[Sophia](https://github.com/sopgeo)**: Game Developer
