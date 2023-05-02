@@ -19,15 +19,15 @@
 
 ### Control Keys
 #### Moving in the map
-w - up
-s - down
-a - left
-d - right
+w - up </br>
+s - down </br>
+a - left </br>
+d - right </br>
 #### Switching Locations
-F - forest
-B - Beach
-O - ocean
-I - island
+F - forest </br>
+B - Beach </br>
+O - ocean </br>
+I - island </br>
 ## Game Functions
 
 ## Languages and Tools
