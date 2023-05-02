@@ -7,9 +7,9 @@
 # Contents
 
 - [Summary](#summary)
-- [How to Play](#HowtoPlay)
-- [Game Functions](#GameFunctions)
-- [Languages and Tools](#LanguagesandTools)
+- [How to Play](#how-to-play)
+- [Game Functions](#game-functions)
+- [Languages and Tools](#languages-and-tools)
 - [Team](#team)
 
 # Summary
