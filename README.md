@@ -41,7 +41,7 @@ but specifically chosen to meet the following criteria.
 </p>
 
 
-**[Eric Douglas](https://github.com/ericdouglas)**: founder of OSSU
+* **[Eric Douglas](https://github.com/ericdouglas)**: founder of OSSU
 * **[Josh Hanson](https://github.com/joshmhanson)**: lead technical maintainer
 * **[Waciuma Wanjohi](https://github.com/waciumawanjohi)**: lead academic maintainer
 * **[Contributors](https://github.com/ossu/computer-science/graphs/contributors)**
