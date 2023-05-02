@@ -16,8 +16,8 @@
 
 ### Locations
 
-#### Beach
-#### Forest
+* #### Beach
+* #### Forest
 #### Ocean
 #### Island
 
