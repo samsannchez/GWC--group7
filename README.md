@@ -5,15 +5,15 @@
 ![Girls Who Code UCF](https://cdn.discordapp.com/attachments/1010039856413552732/1102673193417846795/Pink_Pastel_Gradient_Twitter_Header.png)
 
 
-# Contents
+## Contents
 
-- [Summary](#summary)
-- [How to Play](#how-to-play)
-- [Game Functions](#game-functions)
-- [Languages and Tools](#languages-and-tools)
+- [Summary](##summary)
+- [How to Play](##how-to-play)
+- [Game Functions](##game-functions)
+- [Languages and Tools](##languages-and-tools)
 - [Team](#team)
 
-# Summary
+## Summary
 
 The OSSU curriculum is a **complete education in computer science** using online materials.
 It's not merely for career training or professional development.
@@ -26,13 +26,13 @@ as it is assumed most of the people following this curriculum are already educat
 The courses themselves are among the very best in the world, often coming from Harvard, Princeton, MIT, etc.,
 but specifically chosen to meet the following criteria.
 
-# How to play
+## How to play
 
-## Control Keys
+### Control Keys
 
-# Game Functions
+## Game Functions
 
-# Languages and Tools
+## Languages and Tools
 
 <img align="left" alt="Python" width="54px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
 <img align="left" alt="Vscode" width="56px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg" />  
@@ -41,7 +41,7 @@ but specifically chosen to meet the following criteria.
 </br>
 
 
-# Team
+## Team
 
 * **[Glory](https://github.com/Glory-SM)**: Game Developer
 * **[Sophia](https://github.com/sopgeo)**: Game Developer
