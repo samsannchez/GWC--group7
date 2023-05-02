@@ -26,7 +26,7 @@ but specifically chosen to meet the following criteria.
 
 # How to play
 
-# Functions
+# Game Functions
 
 # Summary
 
