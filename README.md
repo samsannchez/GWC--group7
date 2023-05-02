@@ -28,6 +28,8 @@ F - forest </br>
 B - Beach </br>
 O - ocean </br>
 I - island </br>
+#### Other commands
+b - backpack
 ## Game Functions
 
 ## Languages and Tools
