@@ -26,6 +26,8 @@ but specifically chosen to meet the following criteria.
 
 # How to play
 
+## Control Keys
+
 # Game Functions
 
 # Summary
