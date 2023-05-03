@@ -21,6 +21,13 @@
 * #### Ocean
 * #### Island
 
+### Characters
+
+* #### Tiki
+* #### Chief Coa
+* #### Captain Jack
+* #### Forest Ranger
+
 ## How to play
 
 ### Control Keys
