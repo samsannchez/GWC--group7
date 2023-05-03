@@ -23,13 +23,13 @@
 
 ### Characters
 
-* #### Tiki
+#### Tiki
 <p>A local surfer who spends most of his time catching waves. He's carefree and always up for a good time.</p>
-* #### Chief Coa
+#### Chief Coa
 <p>The leader of the village. He's respected by all and often sought out for his wisdom.</p>
-* #### Captain Jack
+#### Captain Jack
 <p>A retired pirate who now runs a bar on the beach. He has an eyepatch and a missing leg.</p>
-* #### Forest Ranger
+#### Forest Ranger
 <p>A forest ranger who patrols the area to protect it from poachers and other dangers.</p>
 
 ## How to play
