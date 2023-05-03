@@ -5,20 +5,27 @@ import time
 from time import sleep
 import os
 import sys
+import scenes
+import functions
+import inventory
+CBLUE = '\33[34m'
+CEND = '\033[0m'
 
 class TinyMazeEnv():
-
+	
 	# define status codes
 	stepped = 1
 	blocked = 2
-	won = 3
-	quit = 4
-	tree = 9
+	raining = 3
+	won = 4
+	quit = 5
+	rain = False
+	health = 100
 	# define mazes
 	mazes =	{ 
-			  13: [         [ 4, 4, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4],
-			  		[ 4, 4, 4, 1, 0, 4, 0, 4, 4, 0, 4, 1, 1],
-			  		[ 4, 0, 0, 0, 0, 1, 0, 4, 0, 0, 4, 2, 1],
+			  13: [ [ 4, 4, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4],
+			  		[ 4, 4, 3, 3, 0, 4, 0, 4, 4, 0, 4, 1, 1],
+			  		[ 4, 0, 3, 3, 3, 1, 0, 4, 0, 0, 4, 2, 1],
 			  		[ 4, 0, 1, 1, 3, 1, 0, 0, 0, 4, 1, 0, 1],
 			  		[ 4, 4, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 4],
 			  		[ 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 4],
@@ -35,8 +42,8 @@ class TinyMazeEnv():
 	
 	def __init__(self,maze_size=13):
 		# initialize starting position and maze
-		self.x = 1
-		self.y = 11
+		self.x = 6
+		self.y = 8
 		self.total_steps = 0
 		if maze_size in self.mazes.keys():
 			self.maze = self.mazes[maze_size]
@@ -45,16 +52,15 @@ class TinyMazeEnv():
 		self.maze_size = len(self.maze)
 
 	def display_maze(self,move='None'):
-		character1=0
 		# display the maze in its current state
-		#os.system('cls')  	# clear screen
-		print("\n"*100)
+		os.system('clear')  	# clear screen
+		functions.current_location(" ","x"," "," ",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
-		print(offset + "        w: up")
-		print(offset + "   a: left d: right")
-		print(offset + "       s: down")
-		print("")
-		#print("---" * (self.maze_size + 2))
+		functions.display_health(self.health, self.rain)
+		print("---" * (self.maze_size + 2))
+		print("       w: up s: down a: left d: right\n")
+		print(offset + "  b: backpack  f: eat fruit")
+		print("---" * (self.maze_size + 2))
 		for i in range(self.maze_size):
 			row = "   "
 			for j in range(self.maze_size):
@@ -63,40 +69,24 @@ class TinyMazeEnv():
 				elif self.maze[i][j] == 1: 
 					row += " # "
 				elif self.maze[i][j] == 2:
-					row += " X "
+					row += " x "
 				elif self.maze[i][j] == 3:
-					row += " C "
+					row += " c "
 				elif self.maze[i][j] == 4:
 					row += "   "
 				else: 
 					row += " . "
-			print(row)
-			#print("---" * (self.maze_size + 2))
-		#if(character1 != 0):
-		#	print(offset + "You found a character!")
-		#	character1 = 0
-		#print(offset + "Move: {0}  Total steps: {1}".format(move,self.total_steps))
-		#print(offset + "     x: {0}, y: {1}".format(self.x,self.y))
+			if(self.total_steps <= 10):
+				print(row)
+			#RAINING
+			elif(self.total_steps <= 20):
+				print(CBLUE+row+CEND)
+				self.rain = True	
+			else:
+				self.total_steps = 0
+				self.rain = False
 
 	def step(self,move):
-		def typing(sentence):
-			for x in sentence:
-				print(x, end='')
-				sys.stdout.flush()
-				sleep(0.05)
-				if(x == "\n"):
-					# press any key to continue?
-					wait = input()
-			
-		def meetcharacter():
-			os.system('cls')
-			#meet mana
-			typing("This is a conversation with a character.\n")
-
-		def return_amulet():
-                    #remove amulet from inventory
-			typing("Return the Amulet")
-
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
 		self.total_steps += 1
@@ -117,25 +107,21 @@ class TinyMazeEnv():
 			if (self.y < self.maze_size-1) and (self.maze[self.y+1][self.x] != 1) and (self.maze[self.y+1][self.x] != 4): 
 				self.y += 1
 				status = self.stepped
+		elif move == "b":
+			inventory.display_inventory()
+			self.maze[self.y][self.x] = 10
+
+		elif move == "f":
+			inventory.remove_item("fruit", 1)
+			self.health += 5
+
 		elif move == "Q":
 			status = self.quit
 
-		#Inside Cave protected from storm or something 
-		if self.maze[self.y][self.x] == 3:
-			
-			self.maze[self.y][self.x] = 10
+		#Check if user is not the cave
+		if self.maze[self.y][self.x] != 3 and self.rain == True and move != "f":
+			self.health -= 5
 
-		#Destination Reached and charcter met
-		if self.maze[self.y][self.x] == 2:
-			#Function call to return amulet
-                        return_amulet()
-                        #Character to finish the storyline
-                        meetcharacter()
-			self.maze[self.y][self.x] = 10
-
-               #Storm genereated after certain amount of steps taken by user
-               #Check if user is in cave, if not lose health
-                
 
 		return status
 
@@ -152,14 +138,8 @@ class TinyMazeEnv():
 			if status == self.quit: 
 				print("You quit.")
 				break
+			elif status == self.raining:
+				print("Seek shelter")
 			else: 
 				self.display_maze(move)
 
-
-# main
-if __name__ == "__main__":
-	if len(sys.argv) > 1:
-		maze = TinyMazeEnv(int(sys.argv[1]))
-	else:
-		maze = TinyMazeEnv()
-	maze.play()
