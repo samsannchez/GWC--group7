@@ -31,10 +31,11 @@ def typing(sentence):
         print(x, end='')
         sys.stdout.flush()
         sleep(0.05)
+
         if(x == "\n"):
-            print(sentence)
             # press any key to continue?
             wait = input()
+
 
 
 ######################################

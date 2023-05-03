@@ -2,7 +2,9 @@ import time
 from time import sleep
 import os
 import sys
+import inventory
 from functions import typing, current_location, animation
+from inventory import display_inventory, display_character_inventory, add_item, remove_item, remove_all, mybackpack
 
 name=""
 
@@ -59,40 +61,82 @@ def Ranger():
         animation()
         current_location("","x","","",2)
 
-def ignoreJack():
-    print("User ignored Jack")
+# def ignoreJack():
+#     print("User ignored Jack")
 
 def talkToJack():
-    options = ["offer a trade", "walk away"]
-    typing("Hey there! I'm Captain Jack. I was a pirate until my ship got attacked. My good 'ol leg also went down with the ship.")
-    typing("\nNow I run a bar West of the Village. Come 'n stop by anytime!")
+    options = ["y", "n"]
+    # typing("Hey there! I'm Captain Jack. I was a pirate until my ship got attacked. My good 'ol leg also went down with the ship.")
+    # typing("\nNow I run a bar West of the Village.")
+    typing("Would you like to trade goods?")
     userInput = ""
+    while userInput not in options:
+        print("\nOptions: type y for yes, n for no")
+        userInput = input()
+        if userInput == "y":
+            trade("Captain Jack")
+
+        if userInput == "n":
+            display_inventory()
+
+def trade(character):
+    os.system('clear')
+    display_character_inventory(character)
+    print("\n")
+    display_inventory()
+
+    item = input("Captain Jack: What do you need? \n")
+
+    if item in notmybackpack:
+        amount = int(input("Amount? "))
+
+    # check if item is in captain jack's backpack
+    # check if captain jack has this amount 
+
+
+
+
+
+    item2 = input("What are you trading? \n")
+    amount = int("Amount? ")
+    add_item(item, amount)
+
+
+
+
     # while userInput not in options:
-    #     print("\nOptions: offer a trade/walk away")
-    #     userInput = input()
+    # print("That's not a valid item.")
+    # userInput = input()
+    # for key, values in mybackpack.items():
+    #     if userInput == key:
+    #         print("Amount? \n")
+    #         add_item(userInput, amount)
+    #     print("That's not a valid item.")
 
-        # if userInput == "offer a trade"
-        #     trade()
+    os.system('clear')
+    display_character_inventory(character)
+    print("\n")
+    display_inventory()
 
-        # if userInput == "walk away"
-        #     forest()
+
+
 
 def meetCaptainJack():
     location = "forest"
-    options = ["talk to jack", "ignore jack"]
-    typing("\nYou hear footsteps behind you.\n")
-    typing("You turn around and see Captain Jack, a retired pirate who now runs a bar on the beach.\n")
-    typing("He has an eyepatch and a missing leg. ")
-    typing("\nWhat would you like to do?")
+    options = ["t", "i"]
+    # typing("You hear footsteps behind you.\n")
+    # typing("You turn around and see Captain Jack, a retired pirate who now runs a bar on the beach.\n")
+    # typing("He has an eyepatch and a missing leg. ")
+    typing("What would you like to do?")
     userInput = ""
     while userInput not in options:
-        print("\nOptions: talk to jack/ignore jack")
+        print("\nOptions: type t to talk to jack, i to ignore jack")
         userInput = input()
-        if userInput == "talk to jack":
+        if userInput == "t":
             talkToJack()
 
-        if userInput == "ignore jack":
-            ignoreJack()
+        # if userInput == "ignore jack":
+        #     displayInventory()
 
 
 

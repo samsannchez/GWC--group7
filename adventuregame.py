@@ -1,6 +1,6 @@
 import os
 import sys
-from scenes import scene1, Ranger, talkToJack, ignoreJack, meetCaptainJack
+from scenes import scene1, Ranger, talkToJack, meetCaptainJack
 import maze
 wood = 0
 diamond =0

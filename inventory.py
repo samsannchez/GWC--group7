@@ -8,10 +8,23 @@ mybackpack = {
   "fruit": 0
 }
 
+notmybackpack = {
+	"wood": 5,
+	"rope": 1,
+	"fruit": 5,
+	"cloth": 1,
+}
+
 #Add to inventory
 def add_item(type, amount):
-	new_amount=mybackpack[type]+amount
+	# if type in mybackpack:
+	new_amount = mybackpack[type]+amount
+	print("here")
 	mybackpack.update({type: new_amount})
+
+	# mybackpack['type'] = amount
+
+
 
 #Remove item from inventory
 def remove_item(type, amount):
@@ -26,9 +39,21 @@ def remove_all():
 
 #Display inventory
 def display_inventory():
-	os.system('clear')
-	print("----Backpack----")
-	print("wood: " + str(mybackpack["wood"])+"\n")
-	print("rope: " + str(mybackpack["rope"])+"\n")
-	print("fruit: " + str(mybackpack["fruit"])+"\n")
+	# os.system('clear')
+	print("---My Backpack---")
+	print("wood: " + str(mybackpack["wood"]))
+	print("rope: " + str(mybackpack["rope"]))
+	print("fruit: " + str(mybackpack["fruit"]))
+	# print("press enter to return to map")
 	goback=input()
+
+def display_character_inventory(name):
+	print("---" + name + "'s Backpack---")
+	for key, values in notmybackpack.items():
+		print(str(key) + ": " + str(values))
+	
+	# goback = input()
+
+
+
+

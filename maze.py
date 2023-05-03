@@ -117,6 +117,7 @@ class TinyMazeEnv():
 				self.y += 1
 				status = self.stepped
 		elif move == "b":
+			os.system('clear')
 			inventory.display_inventory()
 			self.maze[self.y][self.x] = 10
 		elif move == "Q":
