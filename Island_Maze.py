@@ -42,8 +42,8 @@ class TinyMazeEnv():
 	
 	def __init__(self,maze_size=13):
 		# initialize starting position and maze
-		self.x = 6
-		self.y = 8
+		self.x = 1
+		self.y = 11
 		self.total_steps = 0
 		if maze_size in self.mazes.keys():
 			self.maze = self.mazes[maze_size]
