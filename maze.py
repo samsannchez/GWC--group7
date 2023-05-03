@@ -76,8 +76,14 @@ class TinyMazeEnv():
 					row += "   "
 				else: 
 					row += " . "
-			
-			print(CBLUE+row+CEND)			
+			if(self.total_steps <= 10):
+				print(row)
+			#RAINING
+			elif(self.total_steps <= 20):
+				print(CBLUE+row+CEND)	
+			else:
+				self.total_steps = 0
+
 	def step(self,move):
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
