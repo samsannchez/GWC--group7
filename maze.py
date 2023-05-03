@@ -8,6 +8,10 @@ import sys
 import scenes
 import functions
 import inventory
+CBLUE = '\33[34m'
+CEND = '\033[0m'
+health = 100
+
 
 class TinyMazeEnv():
 
@@ -48,15 +52,15 @@ class TinyMazeEnv():
 		self.maze_size = len(self.maze)
 
 	def display_maze(self,move='None'):
-		character1=0
 		# display the maze in its current state
 		os.system('clear')  	# clear screen
-		functions.current_location("","x","","",2)
+		functions.current_location(" ","x"," "," ",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
+		functions.display_health(health)
+		print("---" * (self.maze_size + 2))
 		print("       w: up s: down a: left d: right\n")
 		print(offset + "     b: backpack")
-
-		#print("---" * (self.maze_size + 2))
+		print("---" * (self.maze_size + 2))
 		for i in range(self.maze_size):
 			row = "   "
 			for j in range(self.maze_size):
@@ -72,30 +76,15 @@ class TinyMazeEnv():
 					row += "   "
 				else: 
 					row += " . "
-			print(row)
-			#print("---" * (self.maze_size + 2))
-		#if(character1 != 0):
-		#	print(offset + "You found a character!")
-		#	character1 = 0
-		#print(offset + "Move: {0}  Total steps: {1}".format(move,self.total_steps))
-		#print(offset + "     x: {0}, y: {1}".format(self.x,self.y))
+			if(self.total_steps <= 10):
+				print(row)
+			#RAINING
+			elif(self.total_steps <= 20):
+				print(CBLUE+row+CEND)	
+			else:
+				self.total_steps = 0
 
 	def step(self,move):
-		def typing(sentence):
-			for x in sentence:
-				print(x, end='')
-				sys.stdout.flush()
-				sleep(0.05)
-				if(x == "\n"):
-					# press any key to continue?
-					wait = input()
-
-			
-		def meetcharacter():
-			os.system('clear') 
-			# typing("This is a conversation with a character.\n")
-			scenes.meetCaptainJack()
-
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
 		self.total_steps += 1
@@ -122,10 +111,6 @@ class TinyMazeEnv():
 			self.maze[self.y][self.x] = 10
 		elif move == "Q":
 			status = self.quit
-
-		#Check for a character 
-		if self.maze[self.y][self.x] == 3:
-			meetcharacter()
 
 		#Check for tree
 		if self.maze[self.y][self.x] == 2:
