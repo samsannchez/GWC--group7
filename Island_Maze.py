@@ -56,7 +56,7 @@ class TinyMazeEnv():
 		os.system('clear')  	# clear screen
 		functions.current_location(" ","x"," "," ",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
-		functions.display_health(self.health, self.rain)
+		functions.display_health(self.health)
 		print("---" * (self.maze_size + 2))
 		print("       w: up s: down a: left d: right\n")
 		print(offset + "  b: backpack  f: eat fruit")
