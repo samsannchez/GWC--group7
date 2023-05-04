@@ -9,6 +9,10 @@ from inventory import display_inventory, display_character_inventory, add_item, 
 name=""
 
 
+######################################
+#               BEACH                #
+######################################
+
 # for intro scene: have user touch the amulet and have it glow so they know they have 
 # become the chosen one
 
@@ -44,6 +48,10 @@ def scene1():
 # The ranger informs you about the forest
 #location forest unlocked
 #The ranger:
+
+######################################
+#               FOREST               #
+######################################
 
 def Ranger():
     typing("I'm the forest ranger, my family has looked after the forest for many generation.\n")
@@ -138,5 +146,16 @@ def meetCaptainJack():
         # if userInput == "ignore jack":
         #     displayInventory()
 
+######################################
+#               ISLAND               #
+######################################
 
+
+def Mana():
+    typing("Thank you for returning the heart\n")
+    typing("The amulet was the heart of the island\n.Many years have passed since the heart was stolen\n")
+    typing("The heart began to lose its life force as it had spend far too long away from its body.\n")
+    typing("It began to consume the the villages life force to survive\n")
+    typing("Finally the heart as been returned to its orignal owner. The island is at peace!\n")
+    typing("Enter ... to continue into the ...")
 
