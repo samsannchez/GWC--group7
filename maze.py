@@ -8,8 +8,6 @@ import sys
 import scenes
 import functions
 import inventory
-CBLUE = '\33[34m'
-CEND = '\033[0m'
 health = 100
 
 
@@ -76,14 +74,8 @@ class TinyMazeEnv():
 					row += "   "
 				else: 
 					row += " . "
-			if(self.total_steps <= 10):
-				print(row)
-			#RAINING
-			elif(self.total_steps <= 20):
-				print(CBLUE+row+CEND)	
-			else:
-				self.total_steps = 0
-
+			print(row)
+			
 	def step(self,move):
 		# process a single action
 		offset = " " * int((self.maze_size-5) * 1.5)
