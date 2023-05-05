@@ -47,7 +47,7 @@ O - ocean </br>
 I - island </br>
 #### Other commands
 b - backpack
-
+f - eat fruit
 ## Languages and Tools
 
 <img align="left" alt="Python" width="54px" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-plain.svg" />
