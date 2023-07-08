@@ -1,5 +1,6 @@
 import sys
 import os
+from random import randint
 import random
 import time
 from time import sleep
@@ -9,7 +10,9 @@ import scenes
 import functions
 import inventory
 health = 100
-
+CRED = '\033[91m'
+CEND = '\033[0m'
+CSTART = "\33[37m"
 
 class TinyMazeEnv():
 
@@ -17,19 +20,20 @@ class TinyMazeEnv():
 	stepped = 1
 	blocked = 2
 	tree = 3
-	won = 4
-	quit = 5
+	character = 4
+	won = 5
+	quit = 6
 	# define mazes
 	mazes =	{ 
-			  13: [ [ 0, 0, 0, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4],
+			  13: [ [ 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4],
 			  		[ 4, 4, 4, 1, 0, 4, 4, 4, 4, 4, 4, 1, 1],
 			  		[ 1, 0, 0, 0, 0, 1, 4, 4, 0, 4, 4, 1, 0],
-			  		[ 0, 0, 1, 1, 3, 1, 0, 0, 0, 4, 1, 1, 0],
+			  		[ 1, 0, 1, 1, 3, 1, 0, 0, 0, 4, 1, 1, 0],
 			  		[ 1, 0, 0, 1, 0, 0, 2, 1, 0, 0, 0, 0, 0],
-			  		[ 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1],
-			  		[ 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 3, 0, 0],
-			  		[ 3, 1, 0, 0, 1, 1, 0, 2, 0, 0, 0, 1, 1],
-			  		[ 0, 1, 1, 2, 0, 0, 0, 1, 1, 0, 0, 0, 0],
+			  		[ 4, 4, 1, 0, 0, 1, 0, 1, 1, 1, 1, 0, 1],
+			  		[ 4, 4, 0, 0, 1, 1, 0, 0, 0, 1, 3, 0, 0],
+			  		[ 4, 1, 0, 0, 1, 1, 0, 2, 0, 0, 0, 1, 1],
+			  		[ 4, 1, 1, 2, 0, 0, 0, 1, 1, 0, 0, 0, 0],
 			  		[ 0, 2, 0, 0, 1, 1, 3, 0, 0, 0, 1, 1, 1],
 			  		[ 1, 0, 0, 0, 1, 1, 0, 0, 3, 0, 1, 0, 1],
 			  		[ 1, 0, 1, 0, 0, 0, 2, 1, 1, 0, 1, 0, 1],
@@ -51,7 +55,7 @@ class TinyMazeEnv():
 
 	def display_maze(self,move='None'):
 		# display the maze in its current state
-		os.system('clear')  	# clear screen
+		functions.clear_screen()  	# clear screen
 		functions.current_location(" ","x"," "," ",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
 		functions.display_health(health)
@@ -63,13 +67,13 @@ class TinyMazeEnv():
 			row = "   "
 			for j in range(self.maze_size):
 				if i == self.y and j == self.x: 
-					row += " U "
+					row += CRED+" U "+CEND
 				elif self.maze[i][j] == 1: 
 					row += " # "
 				elif self.maze[i][j] == 2:
 					row += " T "
 				elif self.maze[i][j] == 3:
-					row += " c "
+					row += CSTART+" x "+CEND
 				elif self.maze[i][j] == 4:
 					row += "   "
 				else: 
@@ -98,7 +102,7 @@ class TinyMazeEnv():
 				self.y += 1
 				status = self.stepped
 		elif move == "b":
-			os.system('clear')
+			os.system('cls')
 			inventory.display_inventory()
 			self.maze[self.y][self.x] = 10
 		elif move == "Q":
@@ -109,6 +113,10 @@ class TinyMazeEnv():
 			status=self.tree
 			self.maze[self.y][self.x] = 10
 
+		#Check for character 
+		if self.maze[self.y][self.x] == 3:
+			status=self.character
+
 		return status
 
 	def play(self):
@@ -116,17 +124,23 @@ class TinyMazeEnv():
 		offset = " " * int((self.maze_size-5) * 1.5)
 		while True:
 			if sys.version_info[0] < 3:
-				move = raw_input()
+				move = raw_input("command: ")
 			else:
-				move = input()
+				move = input("command: ")
 			status = self.step(move)
 
 			if status == self.quit: 
 				print("You quit.")
 				break
 			elif status == self.tree:
-				print("You found wood")
-				inventory.add_item("wood", 5)
+				randomwood = randint(3, 15)
+				randomfruit = randint(0, 2)
+				print("You found "+str(randomwood)+" wood")
+				print("You found "+str(randomfruit)+" fruit")
+				inventory.add_item("wood", randomwood)
+				inventory.add_item("fruit", randomfruit)
+			elif status == self.character:
+				scenes.meetCaptainJack()
 			else: 
 				self.display_maze(move)
 
