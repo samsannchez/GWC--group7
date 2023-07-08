@@ -8,8 +8,6 @@ import sys
 import scenes
 import functions
 import inventory
-CBLUE = '\33[34m'
-CEND = '\033[0m'
 
 class TinyMazeEnv():
 	
@@ -21,20 +19,26 @@ class TinyMazeEnv():
 	quit = 5
 	rain = False
 	health = 100
+	#Define colors
+	CBLUE = '\33[34m'
+	CRED = '\033[91m'
+	CSTART = "\33[37m"
+	CBEIGE = '\33[93m'
+	CEND = '\033[0m'
 	# define mazes
 	mazes =	{ 
-			  13: [ [ 4, 4, 0, 0, 0, 0, 4, 4, 4, 4, 4, 4, 4],
-			  		[ 4, 4, 3, 3, 0, 4, 0, 4, 4, 0, 4, 1, 1],
+			  13: [ [ 4, 4, 3, 3, 3, 3, 4, 4, 4, 4, 4, 4, 4],
+			  		[ 4, 4, 3, 3, 3, 4, 0, 4, 4, 0, 4, 1, 1],
 			  		[ 4, 0, 3, 3, 3, 1, 0, 4, 0, 0, 4, 2, 1],
 			  		[ 4, 0, 1, 1, 3, 1, 0, 0, 0, 4, 1, 0, 1],
-			  		[ 4, 4, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 4],
-			  		[ 0, 0, 1, 0, 0, 1, 0, 1, 1, 1, 0, 0, 4],
-			  		[ 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 3, 4, 4],
+			  		[ 4, 4, 0, 1, 0, 0, 0, 1, 0, 3, 3, 3, 4],
+			  		[ 3, 3, 1, 0, 0, 1, 0, 1, 1, 1, 3, 3, 4],
+			  		[ 3, 3, 0, 0, 1, 1, 0, 0, 0, 1, 3, 4, 4],
 			  		[ 3, 1, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 4],
 			  		[ 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0],
 			  		[ 0, 0, 1, 0, 1, 1, 3, 0, 0, 0, 1, 0, 1],
-			  		[ 4, 0, 1, 0, 1, 1, 0, 0, 3, 4, 1, 0, 1],
-			  		[ 4, 0, 1, 0, 0, 0, 0, 1, 4, 4, 4, 0, 4],
+			  		[ 4, 0, 1, 0, 1, 1, 3, 3, 3, 4, 1, 0, 1],
+			  		[ 4, 0, 1, 0, 0, 0, 3, 3, 3, 4, 4, 0, 4],
 			  		[ 4, 4, 1, 0, 1, 0, 0, 4, 4, 4, 4, 4, 4] ],
 
 			}
@@ -53,36 +57,38 @@ class TinyMazeEnv():
 
 	def display_maze(self,move='None'):
 		# display the maze in its current state
-		os.system('clear')  	# clear screen
+		functions.clear_screen()  	# clear screen
 		functions.current_location(" ","x"," "," ",2)
 		offset = " " * int((self.maze_size-5) * 1.5)
 		functions.display_health(self.health)
 		print("---" * (self.maze_size + 2))
 		print("       w: up s: down a: left d: right\n")
-		print(offset + "  b: backpack  f: eat fruit")
+		print("         b: backpack  f: eat fruit")
 		print("---" * (self.maze_size + 2))
 		for i in range(self.maze_size):
 			row = "   "
 			for j in range(self.maze_size):
 				if i == self.y and j == self.x: 
-					row += " U "
+					row += self.CRED+" U "+self.CEND
 				elif self.maze[i][j] == 1: 
-					row += " # "
+					row += self.CSTART+" # "+self.CEND
 				elif self.maze[i][j] == 2:
-					row += " x "
+					row += "\33[37m"+" x "+self.CEND
 				elif self.maze[i][j] == 3:
-					row += " c "
+					row += self.CBEIGE+" c "+self.CEND
 				elif self.maze[i][j] == 4:
 					row += "   "
 				else: 
-					row += " . "
+					row += self.CSTART+" . "+self.CEND
 			if(self.total_steps <= 10):
 				print(row)
 			#RAINING
 			elif(self.total_steps <= 20):
-				print(CBLUE+row+CEND)
-				self.rain = True	
+				self.CSTART = self.CBLUE 
+				self.rain = True
+				print(row)	
 			else:
+				self.CSTART = "\33[37m"
 				self.total_steps = 0
 				self.rain = False
 
@@ -130,9 +136,9 @@ class TinyMazeEnv():
 		offset = " " * int((self.maze_size-5) * 1.5)
 		while True:
 			if sys.version_info[0] < 3:
-				move = raw_input()
+				move = raw_input("Command: ")
 			else:
-				move = input()
+				move = input("Command: ")
 			status = self.step(move)
 
 			if status == self.quit: 
