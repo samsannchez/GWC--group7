@@ -16,9 +16,10 @@ stage=1
 ######################################
 #             GAME START             #
 ###################################### 
+#
 #scene1()
 #Ranger()
-#game=maze.TinyMazeEnv()
-#game.play()
-game2 = Island_Maze.TinyMazeEnv()
-game2.play()
+game=maze.TinyMazeEnv()
+game.play()
+#game2 = Island_Maze.TinyMazeEnv()
+#game2.play()

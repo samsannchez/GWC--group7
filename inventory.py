@@ -1,3 +1,4 @@
+import functions
 import os
 import sys
 
@@ -38,7 +39,7 @@ def remove_all():
 
 #Display inventory
 def display_inventory():
-	# os.system('clear')
+	functions.clear_screen()
 	print("---My Backpack---")
 	print("wood: " + str(mybackpack["wood"]))
 	print("rope: " + str(mybackpack["rope"]))

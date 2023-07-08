@@ -110,7 +110,7 @@ def trade(character):
 
 
     item2 = input("What are you trading? \n")
-    amount = int("Amount? ")
+    amount = input("Amount? ")
     add_item(item, amount)
 
 
