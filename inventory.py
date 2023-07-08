@@ -19,7 +19,6 @@ notmybackpack = {
 def add_item(type, amount):
 	# if type in mybackpack:
 	new_amount = mybackpack[type]+amount
-	print("here")
 	mybackpack.update({type: new_amount})
 
 	# mybackpack['type'] = amount
