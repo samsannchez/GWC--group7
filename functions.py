@@ -2,12 +2,19 @@ import time
 from time import sleep
 import os
 import sys
-
+import platform
 
 
 ######################################
 #           MAIN FUNCTIONS           #
 ######################################
+
+def clear_screen():
+    opsys = platform.system()
+    if(opsys == "Windows"):
+        os.system('cls')
+    else:
+        os.system('clear')
 
 def display_health(health):
     print("Health: "+str(health))
